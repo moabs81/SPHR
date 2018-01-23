@@ -1,0 +1,67 @@
+#switchStyles() {
+    width: 150px;
+    padding: 50px;
+    text-align: center;
+    font-weight: bold;
+    border: 5px solid black;
+}
+
+.switchAnimation() {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes switchButton {
+    .switchAnimation;
+}
+
+@-moz-keyframes switchButton {
+    .switchAnimation;
+}
+
+@-webkit-keyframes switchButton {
+    .switchAnimation;
+}
+
+.switchMain {
+    width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+    #switchLabel {
+        input {
+            display: none;
+        }
+        .switchOn {
+            #switchStyles;
+            background-color: #FEFEFE;
+            color: #009DB4;
+        }
+        .switchOff {
+            #switchStyles;
+            background-color: #009DB4;
+            color: #FEFEFE;
+        }
+        input[value=off]~.switchOn {
+            display: block;
+            animation: switchButton .5s ease-out;
+            -moz-animation: switchButton .5s ease-out;
+            -webkit-animation: switchButton .5s ease-out;
+        }
+        input[value=off]~.switchOff {
+            display: none;
+        }
+        input[value=on]~.switchOn {
+            display: none;
+        }
+        input[value=on]~.switchOff {
+            display: block;
+            animation: switchButton .5s ease-out;
+            -moz-animation: switchButton .5s ease-out;
+            -webkit-animation: switchButton .5s ease-out;
+        }
+    }
+}

@@ -1,0 +1,129 @@
+@menuColor: #009DB4;
+@menuTextColor: #FEFEFE;
+@floatDivColor : rgba(0, 0, 0, 0.45);
+@bodyFont: "Lucida Sans Unicode",
+"Lucidia Grande",
+sans-serif;
+#menuTransition() {
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+}
+
+#IE11FallbackBackground() {
+    //background-image: url('./imgs/chalkboard.jpeg');
+    background-attachment: fixed;
+    background-position: right top;
+}
+
+#floatContainer() {
+    width: 70%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: @floatDivColor;
+}
+
+//parallax mixins
+#parallaxClass() {
+    -webkit-perspective: 1px;
+    -webkit-perspective-origin: 0 0;
+    perspective: 1px;
+    perspective-origin: 0 0;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#parallax() {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+#background() {
+    -ms-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -ms-transform: translateZ(-9px) scale(14);
+    -webkit-transform: translateZ(-9px) scale(14);
+    transform: translateZ(-9px) scale(14);
+    img {
+        display: block;
+        width: 100%; //height: auto !important;        
+    }
+}
+
+#foreground() {
+    -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+body {
+    margin: 0;
+    font-family: @bodyFont;
+    .titleContainer {
+        z-index: 100;
+        position: fixed;
+        width: 100%;
+        height: 125px;
+        background-color: rgba(0, 0, 0, 0.0);
+        #menuTransition;
+        .menu {
+            #menuTransition;
+            .menuContent {
+                display: inline-block;
+                padding-left: 20px;
+                h2 {
+                    #menuTransition;
+                    color: @menuColor;
+                    letter-spacing: 0.15vw;
+                    margin-top: 50px;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+    .titleContainerSolid {
+        height: 75px;
+        .menu {
+            background-color: @menuColor !important;
+            margin-right: 17px;
+            .leftTitle {
+                h2 {
+                    color: @menuTextColor;
+                    letter-spacing: 0.0vw;
+                    margin-top: 25px;
+                    padding: 0px;
+                }
+            }
+        }
+    }
+    .parallaxClass {
+        #parallaxClass;
+        .parallax {
+            #parallax;
+        }
+        .background {
+            #background;
+        }
+        .foreground {
+            #foreground;
+            .contentContainer {
+                #floatContainer;
+                margin-top: 200px;
+            }
+        }
+    }
+}
+
+.IEFallback {
+    #IE11FallbackBackground;
+}

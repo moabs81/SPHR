@@ -1,0 +1,7 @@
+--compilers js:babel-core/register,css:./config/mochaNoLess.js
+--sort
+--no-deprecation
+--inline-diffs
+--no-warnings
+--recursive
+--reporter spec

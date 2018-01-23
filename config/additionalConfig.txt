@@ -1,0 +1,69 @@
+REACT STUFF
+
+(1) //PACKAGE.JSON ADDITIONS PART 1///////////////////////////////////////////////////////
+
+"devDependencies" :{
+    "babel-preset-react": "^6.24.1",
+    "chai-enzyme": "^1.0.0-beta.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",    
+    "eslint-plugin-react": "^7.5.1",
+    "react-test-renderer": "^16.2.0",
+}
+"dependencies":{
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+}
+
+(2) // .babelrc ////////////////////////////////////////////////////////////////////////
+{
+    "presets": ["env", "react"]
+}
+
+(3) // .eslintrc //////////////////////////////////////////////////////////////////////
+"parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+    }
+},
+"plugins": ["react"]
+
+
+(4a) //PACKAGE.JSON ADDITIONS PART 2///////////////////////////////////////////////////////
+
+"scripts": {
+    "test": "mocha --compilers js:babel-core/register,css:./config/mochaNoLess.js --recursive"
+}
+
+(4b) // ./config/mochaNoLess.js ///////////////////////////////////////////////
+function doNothing() {
+    return null;
+};
+require.extensions['.less'] = doNothing;
+
+(4c) // test imports ///////////////////////////////////////////////////////////////////
+
+import chai from 'chai';
+import enzyme from 'enzyme';
+import { shallow } from 'enzyme';
+import chaiEnzyme from 'chai-enzyme';
+import React from 'react';
+import Adapter from 'enzyme-adapter-react-16';
+
+enzyme.configure({ adapter: new Adapter() });
+chai.use(chaiEnzyme());
+
+import ******MODULE****** from '******SOURCE******';
+
+let testData;
+
+let testSubject = shallow(<JSX Component />);
+
+describe('<ComponentUnderTest />', () => {
+    it('should do a thing', () => {
+        chai.expect(testSubject).*******TEST STUFF HERE*********;
+    })
+});

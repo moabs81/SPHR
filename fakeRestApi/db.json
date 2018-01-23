@@ -1,0 +1,38 @@
+{
+    "documents": [{
+            "title": "New Employee Benefits Summary",
+            "L1Topic": "Insurance",
+            "L2Topic:": "",
+            "type": "Informational",
+            "url": "http://#"
+        },
+        {
+            "title": "SECU Benefits Summary (For All Employees)",
+            "L1Topic": "Insurance",
+            "L2Topic:": "",
+            "type": "Informational",
+            "url": "http://#"
+        },
+        {
+            "title": "BES Beneficiary Instructions",
+            "L1Topic": "Insurance",
+            "L2Topic:": "",
+            "type": "Informational",
+            "url": "http://#"
+        },
+        {
+            "title": "Beneficiary Instructions - Trust Under Will",
+            "L1Topic": "Insurance",
+            "L2Topic:": "",
+            "type": "Informational",
+            "url": "http://#"
+        },
+        {
+            "title": "Application for CHange in Insurance",
+            "L1Topic": "Insurance",
+            "L2Topic:": "",
+            "type": "Form",
+            "url": "http://#"
+        }
+    ]
+}
