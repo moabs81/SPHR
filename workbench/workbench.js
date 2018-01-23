@@ -9,9 +9,6 @@ import './workbench.less';
 import {getScrollPos, isBrowserIE, scrollPosReducer } from './components/actionsReducers';
 import {TopMenu, BodyContent} from './components/functionalComponents';
 
-
-console.log(typeof(backgroundImage));
-
 //initial UI State
 const initialState = {
     position: 200,
