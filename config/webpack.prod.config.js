@@ -6,6 +6,7 @@ const myConfig = require('./moreConfig');
 module.exports = {
     devtool: 'source-map',
     entry: {
+        ES6Poly: 'babel-polyfill',
         workbench: myConfig.buildPath('workbench/workbench.js'),
         app: myConfig.buildPath('projects/sampleComponent/components/Switch.js')
     },

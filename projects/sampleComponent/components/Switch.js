@@ -3,7 +3,9 @@ import * as ReactDom from 'react-dom';
 
 import PropTypes from 'prop-types';
 import { Provider, connect } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+
+import thunk from 'redux-thunk';
 
 import '../styles/switchStyle.less';
 
@@ -28,7 +30,16 @@ const switchReducer = (state = initialState, action) => {
     };
 };
 
-const switchStore = createStore(switchReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const switchStore = createStore(switchReducer, compose(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(thunk)));
+
+const getData = function(){
+    return fetch('http://localhost:3000/documents');
+};
+
+getData().then(
+    success => console.log(success.json()),//Object.values(success.json()).forEach(el => console.log(el)),
+    error => console.log(error)
+);
 
 const SwitchVisualComponent = ({ onOff, onOffEvent }) =>
         <label id='switchLabel'>

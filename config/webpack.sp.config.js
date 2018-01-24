@@ -5,7 +5,10 @@ const myConfig = require('./moreConfig');
 
 module.exports = {
     devtool: 'source-map',
-    entry: myConfig.buildPath('src/spEntry/spApp.js'),
+    entry: {
+        ES6Poly: 'babel-polyfill',
+        app: myConfig.buildPath('src/spEntry/spApp.js')
+    },
     output: {
         path: myConfig.buildPath('spApp/'),
         publicPath: 'https://tsps.ncsecu.local/demo/S22307N/SiteAssets/spApp/',
