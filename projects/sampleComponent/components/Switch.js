@@ -3,7 +3,7 @@ import * as ReactDom from 'react-dom';
 
 import PropTypes from 'prop-types';
 import { Provider, connect } from 'react-redux';
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 
 import thunk from 'redux-thunk';
 
@@ -40,13 +40,107 @@ const getData = () => {
     });
 };
 
-getData().then((result) => {
-    return JSON.parse(result);
-}).then((theData) => {
-    console.log(theData);
-}).catch((error) => {
-    console.log('Hi! Your error is: "' + error + '"');
+const initialState = {
+    isLoading: false,
+    isErrored: false,
+    data: []
+};
+//ACTIONS vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+const fetchIsLoading = (isLoading) => {
+    return {
+        type: 'FETCH_IS_LOADING',
+        isLoading: boolean
+    };
+};
+
+const fetchIsErrored = (isErrored) => {
+    return {
+        type: 'FETCH_HAS_ERRORED',
+        isErrored: boolean
+    };
+};
+
+const fetchHasCompleted = (data) => {
+    return {
+        type: 'FETCH_HAS_COMPLETED',
+        data
+    };
+};
+
+const executeGetData = (dispatch) => {
+    return (dispatch) => {
+        getData().then((result) => {
+            return JSON.parse(result);
+        }).then((theData) => {
+            dispatch(fetchHasCompleted(theData));
+        }).catch((error) => {
+            dispatch(fetchIsErrored(true));
+        });
+    };
+};
+//ACTIONS ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+//REDUCERS vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+const fetchIsLoadingReducer = (state = initialState.isLoading, action) => {
+    switch (action.type) {
+        case 'FETCH_IS_LOADING':
+            return Object.assign(
+                {},
+                state,
+                { isLoading: action.isLoading }
+            );
+        default:
+            return state;
+    };
+};
+
+const fetchHasIsErroredReducer = (state = initialState.isErrored, action) => {
+    switch (action.type) {
+        case 'FETCH_HAS_ERRORED':
+            return Object.assign(
+                {},
+                state,
+                { isErrored: action.isErrored }
+            );
+        default:
+            return state;
+    };
+};
+
+const fetchHasCompletedReducer = (state = initialState.data, action) => {
+    switch (action.type) {
+        case 'FETCH_HAS_COMPLETED':
+            return Object.assign(
+                {},
+                state,
+                { data: action.data }
+            );
+        default:
+            return state;
+    };
+};
+
+const allTheReducers = combineReducers({
+    fetchIsLoadingReducer,
+    fetchHasIsErroredReducer,
+    fetchHasCompletedReducer
 });
+
+//REDUCERS ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+const switchStore = createStore(allTheReducers, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
+
+switchStore.dispatch(executeGetData(switchStore.dispatch));
+console.log(switchStore.getState());
+
+const TableComponent = ({ }) => <div>hi!</div>;
+
+ReactDom.render(
+    <Provider store={switchStore}>
+        <TableComponent />
+    </Provider>,
+    document.getElementById('contentContainer')
+);
 
 /*
 
