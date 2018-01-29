@@ -40,28 +40,28 @@
             "TopPart": "I want to...",
             "BottomPart": "see how much money I make!",
             "url": "http://#",
-            "background": ""
+            "img": ""
         },
         {
             "GUID": "5ac8b7c7-006b-4446-a6e6-a5a18397dfbd",
             "TopPart": "I want to...",
             "BottomPart": "sign up for some insurance.",
             "url": "http://#",
-            "background": ""
+            "img": ""
         },
         {
             "GUID": "e7dbd885-417f-4b4d-aaf3-968ec6c1b5f3",
             "TopPart": "I want to...",
             "BottomPart": "remove a dependant, both from my insurance and my house...",
             "url": "http://#",
-            "background": ""
+            "img": ""
         },
         {
             "GUID": "ce75f905-c34a-4d32-8a26-fccd386be07a",
             "TopPart": "I want to...",
             "BottomPart": "leave this page now.",
             "url": "http://#",
-            "background": ""
+            "img": ""
         }
     ]
 }

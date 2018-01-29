@@ -15,7 +15,7 @@ const xHrReq = function () {
             getData.setRequestHeader(el.header, el.value);
         });
     };
-    getData.send();
+    return getData.send();
 };
 
 export default xHrReq;
