@@ -63,5 +63,79 @@
             "url": "http://#",
             "img": ""
         }
-    ]
+    ],
+    "Jobs": [{
+        "headers": ["Title", "Department", "City"],
+        "data": [{
+                "GUID": "284293ef-71cf-4adc-b977-27f636efabce",
+                "jobNumber": "1234567890",
+                "title": "User Interface Specialist",
+                "deptNum": "01111",
+                "grade": "015",
+                "notes": "Salary grade may vary based on experience",
+                "contactPerson": "Wayne Gretzky",
+                "deptName": "Online Services",
+                "phone": "000-123-4567",
+                "AddressLine1": "1 Test Street",
+                "AddressLine2": "PO Box 1",
+                "AddressLine3": "Somewhere, ST 12345"
+            },
+            {
+                "GUID": "977c3430-0ad2-45e1-97f8-4b19ebed356d",
+                "jobNumber": "2345678901",
+                "title": "Software Tester",
+                "deptNum": "01222",
+                "grade": "017",
+                "notes": "Previous experience not required",
+                "contactPerson": "Jaromir Jagr",
+                "deptName": "Software Quality Assurance",
+                "phone": "000-123-5678",
+                "AddressLine1": "1 Test Street",
+                "AddressLine2": "PO Box 2",
+                "AddressLine3": "Somewhere, ST 12345"
+            },
+            {
+                "GUID": "ae3afc46-638c-406b-a379-e086d7e1fa1d",
+                "jobNumber": "3456789012",
+                "title": "Software Tester I",
+                "deptNum": "01222",
+                "grade": "021",
+                "notes": "Must know about the bugs",
+                "contactPerson": "Jaromir Jagr",
+                "deptName": "Software Quality Assurance",
+                "phone": "000-123-5678",
+                "AddressLine1": "1 Test Street",
+                "AddressLine2": "PO Box 2",
+                "AddressLine3": "Somewhere, ST 12345"
+            },
+            {
+                "GUID": "67bf4eb5-93e3-473d-a385-cc70092c125c",
+                "jobNumber": "4567890123",
+                "title": "Call Center Rep",
+                "deptNum": "00234",
+                "grade": "008",
+                "notes": "Only the best, please",
+                "contactPerson": "Mark Messier",
+                "deptName": "Customer Support",
+                "phone": "000-234-5678",
+                "AddressLine1": "20 Test Lane",
+                "AddressLine2": "",
+                "AddressLine3": "Testville, ST 12456"
+            },
+            {
+                "GUID": "1a2e2be6-7c99-48b9-b18b-35eae7811011",
+                "jobNumber": "5678901234",
+                "title": "Customer Service Rep",
+                "deptNum": "00045",
+                "grade": "011",
+                "notes": "Service with a smile!",
+                "contactPerson": "Gordie Howe",
+                "deptName": "Store Operations",
+                "phone": "111-345-6789",
+                "AddressLine1": "32 Test Drive",
+                "AddressLine2": "PO Box 65",
+                "AddressLine3": "Testburgh, ST 16457"
+            }
+        ]
+    }]
 }

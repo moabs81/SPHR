@@ -8,8 +8,9 @@ module.exports = {
     entry: {
         ES6Poly: 'babel-polyfill',
         workbench: myConfig.buildPath('workbench/workbench.js'),
+        app: myConfig.buildPath('projects/hrJobs/hrJobs.js')
         //app: myConfig.buildPath('projects/hrHomePageCards/HRHomepageCards.js')
-        app: myConfig.buildPath('projects/sampleComponent/components/Switch.js')
+        //app: myConfig.buildPath('projects/sampleComponent/components/Switch.js')
     },
     output: {
         filename: '[name]-[hash:6].js',
