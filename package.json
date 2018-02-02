@@ -4,7 +4,7 @@
     "description": "hmm we'll see.",
     "scripts": {
         "dev": "webpack-dev-server --config ./config/webpack.dev.config.js --hot --inline",
-        "API": "json-server --watch ./fakeRestApi/db.json",
+        "API": "json-server --watch ./fakeRestApi/db.json --config ./config/json-server.json",
         "start": "start npm run dev && start npm run API",
         "test": "mocha",
         "cleanDist": "rm -rf dist/*",

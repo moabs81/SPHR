@@ -1,0 +1,24 @@
+@keyframes goAround {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loadingView {
+    border: 10px solid #f3f3f3;
+    border-bottom: 10px solid #0385c1;
+    border-top: 10px solid #0385c1;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: goAround 2s linear infinite;
+}
+
+.panelContainerClass {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
