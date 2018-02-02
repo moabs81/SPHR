@@ -8,9 +8,7 @@ module.exports = {
     entry: {
         ES6Poly: 'babel-polyfill',
         workbench: myConfig.buildPath('workbench/workbench.js'),
-        app: myConfig.buildPath('projects/hrJobs/hrJobs.js')
-        //app: myConfig.buildPath('projects/hrHomePageCards/HRHomepageCards.js')
-        //app: myConfig.buildPath('projects/sampleComponent/components/Switch.js')
+        app: myConfig.buildPath('projects/ReactOnlyHPCards/app.js')
     },
     output: {
         filename: '[name]-[hash:6].js',
@@ -19,13 +17,7 @@ module.exports = {
     plugins: [
         new htmlWebpackPlugin({
             template: myConfig.buildPath('workbench/workbench.html')
-        })/*,
-        new webpack.ProvidePlugin({
-            'window.jQuery': 'jQuery',
-            'window.$': 'jQuery',
-            'jQuery': 'jQuery',
-            '$': 'jQuery'
-        })*/
+        })
     ],
     module: {
         rules: [{
