@@ -8,7 +8,7 @@ import { PanelComponent } from './Panel';
 import '../styles/ContainerStyle.less';
 
 const defaultXHrParams = {
-    baseURI: 'http://7300W011:3000',
+    baseURI: 'http://localhost:3000',
     endpointURI: '/HRCards',
     parametersURI: '',
     method: 'GET',
