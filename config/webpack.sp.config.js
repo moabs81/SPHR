@@ -11,7 +11,7 @@ module.exports = {
     },
     output: {
         path: myConfig.buildPath('spApp/'),
-        publicPath: 'https://tsps.ncsecu.local/demo/S22307N/SiteAssets/HRHomePageCards/',
+        publicPath: '###replace1###/demo/###replace2###/SiteAssets/HRHomePageCards/',
         filename: '[name].js'
     },
     module: {

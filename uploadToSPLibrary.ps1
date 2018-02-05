@@ -14,7 +14,7 @@
 #  (2) graceful handling of error conditions for improper paths or no files
 # Happy Dev'ing!
 
-$uri="https://tsps.ncsecu.local/demo/S22307N/SiteAssets/HRHomePageCards/"
+$uri="###replace1###/demo/###replace2###/SiteAssets/HRHomePageCards/"
 $path = Get-Location
 Get-ChildItem -Path ./spApp -r | foreach {        
     $fullUri = $uri + $_

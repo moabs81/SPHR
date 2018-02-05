@@ -8,7 +8,7 @@ import ContainerComponent from './components/Container';
 import './styles/testPageStyle.less';
 
 const xHrParams = {
-    baseURI: 'https://tsps.ncsecu.local/demo/S22307N',
+    baseURI: '###replace1###/demo/###replace2###',
     endpointURI: '/_api/web/lists/getbytitle(\'HRHomePageCardsList\')/items',
     parametersURI: '',
     method: 'GET',
