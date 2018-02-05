@@ -5,9 +5,11 @@ import { getData } from './routes/routes';
 
 import ContainerComponent from './components/Container';
 
+import './styles/testPageStyle.less';
+
 const xHrParams = {
-    baseURI: 'http://localhost:3000',
-    endpointURI: '/HRCards',
+    baseURI: 'https://tsps.ncsecu.local/demo/S22307N',
+    endpointURI: '/_api/web/lists/getbytitle(\'HRHomePageCardsList\')/items',
     parametersURI: '',
     method: 'GET',
     headers: [
@@ -16,19 +18,16 @@ const xHrParams = {
     ]
 };
 
-
-//this.setState({ data: theData, isLoading: false });
-
 const returnDataToState = function (xHrParams, cbReturn) {
     getData(xHrParams).then((result) => {
         const arrResults = [];
-        JSON.parse(result).forEach(el => {
+        JSON.parse(result).value.forEach(el => {
             arrResults.push({
-                GUID: el.GUID,
+                GUID: el['odata.id'],
                 TopPart: el.TopPart,
-                BottomPart: el.BottomPart,
-                url: el.url,
-                img: el.img
+                BottomPart: el.Title,
+                url: el.URL.Url,
+                img: el.Img.Url
             });
         });
         cbReturn(arrResults);
@@ -37,4 +36,4 @@ const returnDataToState = function (xHrParams, cbReturn) {
     });
 };
 
-ReactDOM.render(<ContainerComponent xHrParams={xHrParams} returnDataToState={returnDataToState} />, document.getElementById('contentContainer'));
+ReactDOM.render(<ContainerComponent xHrParams={xHrParams} returnDataToState={returnDataToState} />, document.getElementById('hrCardsContainer'));

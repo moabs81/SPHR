@@ -1,0 +1,94 @@
+#suiteBarDelta,
+#globalNavBox,
+#s4-ribbonRow {
+    display: none;
+}
+
+.ms-core-listMenu-horizontalBox li.static>.ms-core-listMenu-item,
+.ms-core-pageTitle,
+.ms-core-pageTitle a,
+.ms-navedit-editLinksText>span>.ms-metadata,
+.ms-srch-sb>input {
+    color: #FFFFFF !important;
+}
+
+.ms-srch-sb {
+    border-color: #FFFFFF !important;
+}
+
+.selected {
+    font-weight: bold;
+}
+
+.static.menu-item:hover {
+    text-decoration: underline;
+}
+
+#s4-titlerow {
+    display: block;
+    position: fixed;
+    padding-bottom: 25px;
+    background-color: rgba(59, 60, 64, 1.0) !important;
+    border-color: rgba(0, 0, 0, 0.0);
+    z-index: 1001;
+    margin-right: 17px;
+}
+
+#globalNavBox,
+.ms-core-overlay {
+    background-color: rgba(255, 255, 255, 0.0) !important;
+}
+
+#contentRow {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #ffffff;
+    #sideNavBox {
+        width: 100%;
+        margin-left: 25px;
+        text-align: center;
+        ul {
+            li {
+                display: inline-block;
+                text-align: center;
+            }
+            .selected {
+                display: none;
+                a {
+                    background-color: inherit;
+                    span {
+                        span {
+                            font-weight: normal;
+                        }
+                    }
+                }
+            }
+            .ms-listMenu-editLink {
+                display: none;
+                span {
+                    display: none;
+                }
+            }
+        } //padding-top: 130px;
+        //position: fixed;  
+    }
+    #contentBox {
+        margin-left: 25px;
+        width: 100%;
+        padding-top: 130px;
+        table {
+            tbody {
+                tr:nth-child(2) {
+                    a {
+                        color: inherit;
+                        text-decoration: none;
+                    }
+                    a:visited {
+                        color: inherit;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}

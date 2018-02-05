@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import '../styles/PanelStyle.less';
 
 export const PanelComponent = ({ GUID, topPart, bottomPart, url, img }) => {
-    console.log(img);
     const backgroundStyle = {
         backgroundImage: 'url(' + img + ')',
     };

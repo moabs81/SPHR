@@ -7,18 +7,26 @@
     flex-flow: column wrap;
     padding: 50px;
     margin: 30px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
-    background-color: antiquewhite;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.7); //background-color: antiquewhite;
     .panelContent {
         background-color: rgba(255, 255, 255, 0.7);
         .topPart {
-            padding: 50px 10px 50px 10px;
+            height: 85px;
+            padding-top: 25px; //padding: 40px 10px 40px 10px;
+            padding-left: 25px;
             font-style: italic;
+            font-size: 1.75em;
         }
         .bottomPart {
-            padding: 0 10px 50px 10px;
+            height: 85px; //padding: 0 10px 40px 10px;
+            padding-left: 25px;
+            font-size: 1.25em;
         }
     }
+}
+
+.panelClass:hover {
+    text-decoration: none;
 }
 
 .panelClass:visited {

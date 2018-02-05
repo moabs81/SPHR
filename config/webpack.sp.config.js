@@ -7,12 +7,12 @@ module.exports = {
     devtool: 'source-map',
     entry: {
         ES6Poly: 'babel-polyfill',
-        app: myConfig.buildPath('src/spEntry/spApp.js')
+        app: myConfig.buildPath('projects/ReactOnlyHPCards/spApp.js')
     },
     output: {
         path: myConfig.buildPath('spApp/'),
-        publicPath: 'https://tsps.ncsecu.local/demo/S22307N/SiteAssets/spApp/',
-        filename: 'appBundle.js'
+        publicPath: 'https://tsps.ncsecu.local/demo/S22307N/SiteAssets/HRHomePageCards/',
+        filename: '[name].js'
     },
     module: {
         rules: [{
@@ -79,7 +79,7 @@ module.exports = {
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new htmlWebpackPlugin({
-            template: myConfig.buildPath('src/spEntry/spApp.html')
+            template: myConfig.buildPath('spTemplate/spApp.html')
         })
     ]
 }

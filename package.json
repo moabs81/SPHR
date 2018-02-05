@@ -10,7 +10,7 @@
         "cleanDist": "rm -rf dist/*",
         "build": "webpack --config ./config/webpack.prod.config.js",
         "TCB": "npm run test && npm run cleanDist && npm run build",
-        "spBuild": "webpack --config ./config/webpack.sp.config.js",
+        "spBuild": "rm -rf spApp/* && webpack --config ./config/webpack.sp.config.js",
         "spUpload": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./uploadToSPLibrary.ps1",
         "spBU": "npm run spBuild && npm run spUpload",
         "gitScrub": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./scrubFiles.ps1",

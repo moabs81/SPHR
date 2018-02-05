@@ -7,17 +7,6 @@ import { PanelComponent } from './Panel';
 
 import '../styles/ContainerStyle.less';
 
-const defaultXHrParams = {
-    baseURI: 'http://localhost:3000',
-    endpointURI: '/HRCards',
-    parametersURI: '',
-    method: 'GET',
-    headers: [
-        { 'header': 'Accept', 'value': 'application/json' },
-        { 'header': 'odata', 'value': 'verbose' }
-    ]
-};
-
 class ContainerComponent extends Component {
     constructor(props) {
         super(props);
@@ -27,12 +16,8 @@ class ContainerComponent extends Component {
         };
     };
     componentDidMount() {
-        getData(defaultXHrParams).then((result) => {
-            return JSON.parse(result);
-        }).then((theData) => {
-            this.setState({ data: theData, isLoading: false });
-        }).catch((error) => {
-            return error;
+        this.props.returnDataToState(this.props.xHrParams, result => {
+            this.setState({ data: result, isLoading: false });
         });
     };
     render() {
