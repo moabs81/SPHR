@@ -8,7 +8,7 @@ module.exports = {
     entry: {
         ES6Poly: 'babel-polyfill',
         workbench: myConfig.buildPath('workbench/workbench.js'),
-        app: myConfig.buildPath('projects/ReactOnlyHPCards/app.js')
+        app: myConfig.buildPath('projects/contentSelector/app.js')
     },
     output: {
         filename: '[name]-[hash:6].js',
