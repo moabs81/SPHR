@@ -18,7 +18,7 @@ $uri="###replace1###/demo/###replace2###/SiteAssets/HRHomePageCards/"
 $path = Get-Location
 Get-ChildItem -Path ./spApp -r | foreach {        
     $fullUri = $uri + $_
-    $fullPath = $path.ToString() + '\spApp\' + $_
+    $fullPath = $path.ToString() + '\spApp\' + $_    
     Invoke-WebRequest -Uri $fullUri -InFile $fullPath -Method Put -UseDefaultCredentials    
 }
 Get-ChildItem -Path ./spApp -r | foreach {        
