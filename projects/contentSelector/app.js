@@ -8,7 +8,7 @@ import { ContentSelectorContainer } from './components/ContentSelectorContainer'
 const xHrParams = {
     baseURI: 'http://localhost:3000',
     endpointURI: '/contentContainerDocuments',
-    parametersURI: '?Section=Insurance`&&_sort=SubSection&_order=asc',
+    parametersURI: '?Section=Insurance&_sort=SubSection&_order=asc',
     method: 'GET',
     headers: [
         { 'header': 'Accept', 'value': 'application/json' },
