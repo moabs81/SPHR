@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { SubSectionPanel } from './SubSectionPanel';
+import { ContentPanel } from './ContentPanel';
 
 import '../styles/ContentSelectorContainerStyles.less';
 
@@ -31,7 +32,7 @@ class ContentSelectorContainer extends Component {
                 </div>
             );
         } else {
-            this.state.data.forEach((el) => {
+            this.state.data.forEach((el, index) => {
                 if (arrSubSectionTitles.findIndex(subSec => subSec === el.SubSection) === -1) {
                     arrSubSectionTitles.push(el.SubSection);
                     if (this.state.selection === arrSubSectionTitles.indexOf(el.SubSection)) {
@@ -41,7 +42,7 @@ class ContentSelectorContainer extends Component {
                     };
                 };
                 if (this.state.selection === arrSubSectionTitles.indexOf(el.SubSection)) {
-                    arrContent.push(<div>{el.Title}</div>);
+                    arrContent.push(<ContentPanel key={el.GUID + index} title={el.Title} url={el.url} />);
                 };
             });
             return (

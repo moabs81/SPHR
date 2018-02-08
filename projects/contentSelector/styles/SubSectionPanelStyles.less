@@ -1,34 +1,47 @@
-.SubSectionRow {
-    position: relative;
-    z-index: 0;
-    width: 80%;
-    padding: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: rgb(59, 73, 121);
-    border: 3px solid;
+@keyframes arrowMove {
+    0% {
+        transform: translateX(180%) rotate(1deg);
+    }
+    100% {
+        transform: translateX(210%) rotate(0deg);
+    }
 }
 
-.SubSectionRow:before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgb(15, 28, 70);
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    transition: transform .3s ease-out;
+.OuterSubSectionRow {
+    padding: 0px 50px 0px 50px;
+    transition: .25s ease-in-out;
+    .InnerSubSectionRow {
+        line-height: 60px;
+        z-index: 0;
+        padding: 25px 25px 25px 85px;
+        cursor: default;
+        vertical-align: middle;
+        border-bottom: 1px solid;
+    }
+    .InnerSubSectionRow::after {
+        content: "";
+        vertical-align: middle;
+        display: inline-block;
+        border: 30px solid rgba(255, 255, 255, 0.0);
+        transform: translateX(210%);
+    }
 }
 
-.SubSectionRow:hover:after {
-    content: '';
-    position: relative;
-    z-index: 0;
+.OuterSubSectionRow:last-child {
+    .InnerSubSectionRow {
+        border-bottom: 0px;
+    }
 }
 
-.SubSectionRow:hover:before {
-    transform: scaleX(1);
+.OuterSubSectionRow:hover {
+    .InnerSubSectionRow::after {
+        content: "";
+        vertical-align: middle;
+        display: inline-block;
+        border: 30px solid;
+        border-right-color: rgba(255, 255, 255, 0.0);
+        border-bottom-color: rgba(255, 255, 255, 0.0);
+        border-top-color: rgba(255, 255, 255, 0.0);
+        animation: arrowMove 1s linear;
+    }
 }
