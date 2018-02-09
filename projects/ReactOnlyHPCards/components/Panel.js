@@ -6,6 +6,7 @@ import '../styles/PanelStyle.less';
 export const PanelComponent = ({ GUID, topPart, bottomPart, url, img }) => {
     const backgroundStyle = {
         backgroundImage: 'url(' + img + ')',
+        zIndex: '9'
     };
     return (
         <a className='panelClass' href={url} style={backgroundStyle} target='blank'>

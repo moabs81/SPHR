@@ -1,4 +1,21 @@
+/*@keyframes highlightPanel {
+    0% {
+        -webkit-transform: perspective(100px) translateZ(0px);
+        -moz-transform: perspective(100px) translateZ(0px);
+        -ms-transform: perspective(100px) translateZ(0px);
+        transform: perspective(100px) translateZ(0px);
+    }
+    100% {
+        -webkit-transform: perspective(100px) translateZ(-10000px);
+        -moz-transform: perspective(100px) translateZ(-10000px);
+        -ms-transform: perspective(100px) translateZ(-10000px);
+        transform: perspective(100px) translateZ(-10000px);
+    }
+}*/
+
 .panelClass {
+    background-color: rgba(255, 255, 255, 0.7); // rgba(199, 39, 39, 0.851);
+    position: relative;
     color: inherit;
     text-decoration: none;
     width: 400px;
@@ -10,6 +27,7 @@
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.7); //background-color: antiquewhite;
     .panelContent {
         background-color: rgba(255, 255, 255, 0.7);
+        z-index: 10;
         .topPart {
             height: 85px;
             padding-top: 25px; //padding: 40px 10px 40px 10px;
@@ -28,6 +46,23 @@
 .panelClass:hover {
     text-decoration: none;
 }
+
+/*.panelClass:hover::after {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    height: 120px;
+    width: 320px;
+    padding: 50px;
+    left: 0px;
+    top: 0px;
+    border: 40px solid;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.0);
+    animation: highlightPanel 1s ease-in;
+    -ms-transform: perspective(100px) translateZ(-10000px);
+    transform: perspective(100px) translateZ(-10000px);
+}*/
 
 .panelClass:visited {
     color: inherit;
