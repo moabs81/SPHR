@@ -14,7 +14,7 @@
         "spUpload": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./uploadToSPLibrary.ps1",
         "spBU": "npm run spBuild && npm run spUpload",
         "gitScrub": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./scrubFiles.ps1",
-        "serve": "json-server --watch ./fakeRestApi/db.json --static ./dist --port 5000"
+        "serve": "json-server --watch ./fakeRestApi/db.json --static ./spApp --port 5000"
     },
     "author": "Nick",
     "license": "ISC",
